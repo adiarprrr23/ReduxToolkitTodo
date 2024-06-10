@@ -19,9 +19,9 @@ export const todoSlice=createSlice({
         removeTodo:(state,action)=>{
             state.todos=state.todos.filter((todo)=>todo.id!==action.payload)
         },
-        // updateTodo:(state,action)=>{
-        //     state.todos=state.todos.map((todo)=>(todo.id==action.payload.id?action.payload:todo))
-        // },
+        updateTodo:(state,action)=>{
+            state.todos=state.todos.map((todo)=>(todo.id==action.payload.id?action.payload:todo))
+        },
         // toggleComplete:(state,action)=>{
         //     state.todos=state.todos.map((todo)=>(todo.id==action.payload?todo:todo))
         // }
@@ -29,6 +29,6 @@ export const todoSlice=createSlice({
 })
 
 
-export const {addTodo,removeTodo}=todoSlice.actions
+export const {addTodo,removeTodo,updateTodo}=todoSlice.actions
 
 export default todoSlice.reducer
